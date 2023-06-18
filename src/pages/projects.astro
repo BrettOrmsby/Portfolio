@@ -1,0 +1,27 @@
+---
+import ProjectCard from "../components/ProjectCard.astro";
+import NavLayout from "../layouts/NavLayout.astro";
+import projects from "../store/projects";
+---
+
+<NavLayout title="Projects">
+  <h1>
+    <span class="primary">For</span> Project <span class="primary">Of</span> Projects
+  </h1>
+  <div class="project-grid">
+    {projects.map((project) => <ProjectCard project={project} />)}
+  </div>
+</NavLayout>
+
+<style>
+  h1 {
+    text-align: center;
+  }
+  .project-grid {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    column-gap: var(--pico-block-spacing-vertical);
+    flex-wrap: wrap;
+  }
+</style>

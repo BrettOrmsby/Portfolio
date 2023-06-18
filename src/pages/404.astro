@@ -1,0 +1,27 @@
+
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="404 | Page Not Found">
+    <main class="container">
+  <h1>404</h1>
+  <p>Page not found.</p>
+  <div class="center">
+    <a href="/" role="button">Home</a>
+  </div>
+</main>
+</BaseLayout>
+<style>
+    .center {
+        display: flex;
+        justify-content: center;
+    }
+    .container > * {
+        margin: 0 auto;
+        text-align: center;
+    }
+    h1 {
+        margin-bottom: var(--pico-typography-spacing-vertical);
+    }
+</style>

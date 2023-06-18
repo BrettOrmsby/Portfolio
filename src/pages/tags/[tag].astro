@@ -1,0 +1,67 @@
+---
+import NavLayout from "../../layouts/NavLayout.astro";
+import allProjects from "../../store/projects";
+import { skills } from "../index.astro";
+import type { Post, Project } from "../../utils/types";
+import type { MDXInstance } from "astro";
+
+export interface Props {
+  projects: Project[];
+  posts: MDXInstance<Post>[];
+}
+
+export async function getStaticPaths() {
+  const allPosts = await Astro.glob("../posts/*.mdx");
+
+  const tags = new Set(skills);
+  for (const post of allPosts) {
+    for (const tag of post.frontmatter.tags) {
+      tags.add(tag);
+    }
+  }
+  for (const project of allProjects) {
+    for (const tag of project.tags) {
+      tags.add(tag);
+    }
+  }
+
+  return [...tags].map((tag) => {
+    const filteredPosts = allPosts.filter((post) =>
+      post.frontmatter.tags.includes(tag)
+    );
+    const filteredProjects = allProjects.filter((project) =>
+      project.tags.includes(tag as string)
+    );
+    return {
+      params: { tag },
+      props: { posts: filteredPosts, projects: filteredProjects }
+    };
+  });
+}
+
+const { tag } = Astro.params;
+const { posts, projects } = Astro.props;
+---
+
+<NavLayout title={tag || ""}>
+  <p>Posts tagged with {tag}</p>
+  <ul>
+    {
+      posts.map((post) => (
+        <li>
+          <a href={post.url}>{post.frontmatter.title}</a>
+        </li>
+      ))
+    }
+  </ul>
+  <p>Projects tagged with {tag}</p>
+  <ul>
+    {
+      projects.map((project) => (
+        <li>
+          <a href={project.link}>{project.name}</a>
+        </li>
+      ))
+    }
+  </ul>
+</NavLayout>

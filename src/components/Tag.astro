@@ -1,0 +1,28 @@
+---
+export interface Props {
+  name: string;
+}
+
+const { name } = Astro.props;
+---
+
+<a class="tag" href={"/tags/" + name}>
+  {name}
+</a>
+
+<style>
+  .tag {
+    color: var(--pico-primary-inverse);
+    background-color: var(--pico-primary-background);
+    border-radius: var(--pico-border-radius);
+    cursor: pointer;
+    padding: 0.125rem 0.25rem;
+    display: inline-block;
+    text-decoration: none;
+    font-size: 0.875em;
+  }
+  .tag:hover {
+    color: var(--pico-primary-inverse);
+    background-color: var(--pico-primary-hover-background);
+  }
+</style>

@@ -1,0 +1,32 @@
+---
+import "../styles/global.css";
+export interface Props {
+  title: string;
+  description?: string,
+  imgPath?: string
+}
+const { title, description="Brett Ormsby; a student, programmer, webdev.", imgPath="/favicon.svg" } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+
+    <link rel="apple-touch-icon" sizes="180x180" href={imgPath}>
+    <meta name='og:image' content={imgPath}>
+
+    <meta name='og:title' content={title}>
+    <meta name='og:site_name' content="Brett Ormsby">
+    <meta name='og:description' content={description}>
+
+    <title>{title}</title>
+  </head>
+  <body>
+    <slot>
+  </body>
+</html>

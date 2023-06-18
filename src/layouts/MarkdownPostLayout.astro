@@ -1,0 +1,70 @@
+---
+import type { Post } from "../utils/types";
+import Tag from "../components/Tag.astro";
+import NavLayout from "./NavLayout.astro";
+interface Props {
+  frontmatter: Post;
+}
+const { frontmatter } = Astro.props;
+
+function formatDate(date: Date) {
+  const months = [
+    "January",
+    "Febuaru",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December"
+  ];
+  const day = date.getDate();
+  const month = months[date.getMonth()];
+  const year = date.getFullYear();
+
+  return `${month} ${day}, ${year}`;
+}
+---
+
+<NavLayout title={frontmatter.title} description={frontmatter.description} imgPath={"/posts" + frontmatter.image}>
+  <hgroup>
+    <h1>{frontmatter.title}</h1>
+    <em>{frontmatter.description}</em>
+    <div class="tag-group">
+      {frontmatter.tags.map((tag) => <Tag name={tag} />)}
+    </div>
+    <p>
+      <time datetime={frontmatter.pubDate.split("T")[0]}
+        >{formatDate(new Date(frontmatter.pubDate))}</time
+      > • {frontmatter.readTime}min
+    </p>
+  </hgroup>
+  <img src={frontmatter.image.url} alt={frontmatter.image.alt} />
+  <main class="container markdown">
+    <slot />
+  </main>
+</NavLayout>
+
+<style>
+  hgroup > * {
+    text-align: center;
+    display: block;
+  }
+  hgroup > :is(em, div) {
+    margin-bottom: calc(var(--pico-typography-spacing-vertical) / 2);
+  }
+  .tag-group {
+    justify-content: center;
+  }
+  img {
+    max-height: 300px;
+    height: 100%;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: var(--pico-block-spacing-vertical);
+  }
+</style>
