@@ -6,6 +6,6 @@ import mdx from "@astrojs/mdx";
 // https://astro.build/config
 export default defineConfig({
   site: 'https://brettormsby.github.io',
-  base: '/portfolio',
+  base: '/Portfolio',
   integrations: [vue(), mdx()],
 });
