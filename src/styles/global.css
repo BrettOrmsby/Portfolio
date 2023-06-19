@@ -50,6 +50,7 @@
   display: flex;
   gap: var(--pico-form-element-spacing-vertical);
   flex-wrap: wrap;
+  justify-content: flex-start;
 }
 
 .card {

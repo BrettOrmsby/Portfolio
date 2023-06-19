@@ -37,7 +37,7 @@ function formatDate(date: Date) {
   <hgroup>
     <h1>{frontmatter.title}</h1>
     <em>{frontmatter.description}</em>
-    <div class="tag-group">
+    <div class="tag-group markdown-tags">
       {frontmatter.tags.map((tag) => <Tag name={tag} />)}
     </div>
     <p>
@@ -63,7 +63,7 @@ function formatDate(date: Date) {
   hgroup > :is(em, div) {
     margin-bottom: calc(var(--pico-typography-spacing-vertical) / 2);
   }
-  .tag-group {
+  .tag-group.markdown-tags {
     justify-content: center;
   }
   img {
