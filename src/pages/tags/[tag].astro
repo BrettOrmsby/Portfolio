@@ -49,31 +49,29 @@ const { posts, projects } = Astro.props;
   <h1>Tag <span class="primary">=</span> `{tag}`</h1>
   <h2>Posts</h2>
   <div class="card-grid">
-    {posts.length > 0 &&
-      posts.map((post) => (
-        <PostCard post={post}/>
-      ))
-    }
-    {posts.length == 0 &&
-      <p>No posts found.</p>
+    {
+      posts.length > 0 ? (
+        posts.map((post) => <PostCard post={post} />)
+      ) : (
+        <p>No posts found.</p>
+      )
     }
   </div>
   <h2>Projects</h2>
   <div class="card-grid">
     {
-      projects.length > 0 &&
-      projects.map((project) => (
-       <ProjectCard project={project}/>
-      ))
-    }
-    {projects.length == 0 &&
-      <p>No projects found.</p>
+      projects.length > 0 ? (
+        projects.map((project) => <ProjectCard project={project} />)
+      ) : (
+        <p>No projects found.</p>
+      )
     }
   </div>
 </NavLayout>
 
 <style>
-  h1, h2 {
+  h1,
+  h2 {
     text-align: center;
   }
   .card-grid {

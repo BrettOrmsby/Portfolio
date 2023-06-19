@@ -30,7 +30,10 @@ function formatDate(date: Date) {
 }
 ---
 
-<NavLayout title={frontmatter.title} description={frontmatter.description} imgPath={"/Portfolio/posts" + frontmatter.image}>
+<NavLayout
+  title={frontmatter.title}
+  description={frontmatter.description}
+  imgPath={"/Portfolio/posts" + frontmatter.image}>
   <hgroup>
     <h1>{frontmatter.title}</h1>
     <em>{frontmatter.description}</em>
@@ -43,7 +46,10 @@ function formatDate(date: Date) {
       > • {frontmatter.readTime}min
     </p>
   </hgroup>
-  <img src={"/Portfolio/posts/" + frontmatter.image.url} alt={frontmatter.image.alt} />
+  <img
+    src={"/Portfolio/posts/" + frontmatter.image.url}
+    alt={frontmatter.image.alt}
+  />
   <main class="container markdown">
     <slot />
   </main>

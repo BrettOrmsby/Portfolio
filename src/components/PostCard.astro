@@ -17,7 +17,8 @@ const { post } = Astro.props;
   <div class="content">
     <h3>{post.frontmatter.title}</h3>
     <small
-      >{post.frontmatter.pubDate.split("T")[0]} • {post.frontmatter.readTime}min read</small
+      >{post.frontmatter.pubDate.split("T")[0]} • {post.frontmatter.readTime}min
+      read</small
     >
     <div class="tag-group">
       {post.frontmatter.tags.sort().map((tag) => <Tag name={tag} />)}

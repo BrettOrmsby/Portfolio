@@ -5,7 +5,14 @@ export default [
     name: "Blobbed Editor",
     image: { path: "blobbed-editor.jpg", alt: "Example output image" },
     link: "https://blobbededitor.vercel.app/",
-    tags: ["design", "vue", "javascript", "highlight.js", "html2canvas", "picocss"],
+    tags: [
+      "design",
+      "vue",
+      "javascript",
+      "highlight.js",
+      "html2canvas",
+      "picocss"
+    ],
     description: "Create blobbed, syntax-highlighted images of your code.",
     date: "2022-8-11"
   },
@@ -48,7 +55,8 @@ export default [
     },
     link: "https://addons.mozilla.org/en-CA/firefox/addon/scryfall-search-clipboard/",
     tags: ["javascript", "extension"],
-    description: "Add an EDHREC-like clipboard for copying card names on Scryfall",
+    description:
+      "Add an EDHREC-like clipboard for copying card names on Scryfall",
     date: "2023-6-19"
   },
   {
@@ -59,7 +67,8 @@ export default [
     },
     link: "https://brettormsby.github.io/Portfolio/",
     tags: ["typescript", "astro", "picocss"],
-    description: "Add an EDHREC-like clipboard for copying card names on Scryfall",
+    description:
+      "Add an EDHREC-like clipboard for copying card names on Scryfall",
     date: "2023-6-19"
   }
 ] as Project[];

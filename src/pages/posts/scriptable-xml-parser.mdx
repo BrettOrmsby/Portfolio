@@ -9,7 +9,8 @@ image:
   alt: "Sharable widget example"
 tags: ["javascript", "scriptable", "widget"]
 ---
-import CenterText from "../../components/posts/CenterText.astro"
+
+import CenterText from "../../components/posts/CenterText.astro";
 
 I originally made an XML parser in Scriptable for my [HTML Widget](https://github.com/Normal-Tangerine8609/Scriptable-HTML-Widget) project to replace the previous one. But if we find the right resource, XML parsing can be used for so much more!
 
@@ -358,9 +359,10 @@ Now our function will run like the following diagram and manipulate all children
 ![Recursion On DOM](https://miro.medium.com/max/1000/1*UGrzA4qtLCaaCiNAKZyj_w.gif)
 
 <CenterText>
-<small>
-  Image designed by [Anand K Parmar](https://medium.com/u/bafde9c53431?source=post_page-----d56328450846--------------------------------)
-</small>
+  <small>
+    Image designed by [Anand K
+    Parmar](https://medium.com/u/bafde9c53431?source=post_page-----d56328450846--------------------------------)
+  </small>
 </CenterText>
 
 In the loop, we will follow by updating `newNode` with the value from the traversed children. If the child has no children, we will set `newChild` to a string of its inner text.

@@ -44,7 +44,7 @@ const latestPost = postes.reduce(
   <h2>Self.<span class="primary">skills</span></h2>
   <article>
     <div class="primary">[</div>
-    <div class="tag-group">
+    <div class="tag-group start">
       <div style="width: var(--pico-spacing)"></div>
       {skills.map((skill) => <Tag name={skill} />)}
     </div>
@@ -77,5 +77,8 @@ const latestPost = postes.reduce(
     justify-content: center;
     column-gap: var(--pico-block-spacing-vertical);
     flex-wrap: wrap;
+  }
+  .tag-group.start {
+    justify-content: flex-start;
   }
 </style>
