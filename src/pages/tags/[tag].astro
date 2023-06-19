@@ -4,6 +4,8 @@ import allProjects from "../../store/projects";
 import { skills } from "../index.astro";
 import type { Post, Project } from "../../utils/types";
 import type { MDXInstance } from "astro";
+import PostCard from "../../components/PostCard.astro";
+import ProjectCard from "../../components/ProjectCard.astro";
 
 export interface Props {
   projects: Project[];
@@ -44,24 +46,41 @@ const { posts, projects } = Astro.props;
 ---
 
 <NavLayout title={tag || ""}>
-  <p>Posts tagged with {tag}</p>
-  <ul>
-    {
+  <h1>Tag <span class="primary">=</span> `{tag}`</h1>
+  <h2>Posts</h2>
+  <div class="card-grid">
+    {posts.length > 0 &&
       posts.map((post) => (
-        <li>
-          <a href={post.url}>{post.frontmatter.title}</a>
-        </li>
+        <PostCard post={post}/>
       ))
     }
-  </ul>
-  <p>Projects tagged with {tag}</p>
-  <ul>
+    {posts.length == 0 &&
+      <p>No posts found.</p>
+    }
+  </div>
+  <h2>Projects</h2>
+  <div class="card-grid">
     {
+      projects.length > 0 &&
       projects.map((project) => (
-        <li>
-          <a href={project.link}>{project.name}</a>
-        </li>
+       <ProjectCard project={project}/>
       ))
     }
-  </ul>
+    {projects.length == 0 &&
+      <p>No projects found.</p>
+    }
+  </div>
 </NavLayout>
+
+<style>
+  h1, h2 {
+    text-align: center;
+  }
+  .card-grid {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    column-gap: var(--pico-block-spacing-vertical);
+    flex-wrap: wrap;
+  }
+</style>
