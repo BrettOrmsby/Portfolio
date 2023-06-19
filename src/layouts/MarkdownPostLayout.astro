@@ -7,7 +7,7 @@ interface Props {
 }
 const { frontmatter } = Astro.props;
 
-function formatDate(date: string) {
+function formatDate(date: Date) {
   const months = [
     "January",
     "Febuaru",
@@ -22,19 +22,15 @@ function formatDate(date: string) {
     "November",
     "December"
   ];
-  const splitDate = date.split("-");
-  const year = splitDate[0];
-  const month = months[parseInt(splitDate[1]) - 1];
-  const day = splitDate[2];
+  const day = date.getDate();
+  const month = months[date.getMonth()];
+  const year = date.getFullYear();
 
   return `${month} ${day}, ${year}`;
 }
 ---
 
-<NavLayout
-  title={frontmatter.title}
-  description={frontmatter.description}
-  imgPath={"/Portfolio/posts" + frontmatter.image}>
+<NavLayout title={frontmatter.title} description={frontmatter.description} imgPath={"/Portfolio/posts" + frontmatter.image}>
   <hgroup>
     <h1>{frontmatter.title}</h1>
     <em>{frontmatter.description}</em>
@@ -43,14 +39,11 @@ function formatDate(date: string) {
     </div>
     <p>
       <time datetime={frontmatter.pubDate.split("T")[0]}
-        >{formatDate(frontmatter.pubDate)}</time
+        >{formatDate(new Date(frontmatter.pubDate))}</time
       > • {frontmatter.readTime}min
     </p>
   </hgroup>
-  <img
-    src={"/Portfolio/posts/" + frontmatter.image.url}
-    alt={frontmatter.image.alt}
-  />
+  <img src={"/Portfolio/posts/" + frontmatter.image.url} alt={frontmatter.image.alt} />
   <main class="container markdown">
     <slot />
   </main>
