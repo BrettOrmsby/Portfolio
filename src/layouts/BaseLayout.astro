@@ -2,10 +2,14 @@
 import "../styles/global.css";
 export interface Props {
   title: string;
-  description?: string,
-  imgPath?: string
+  description?: string;
+  imgPath?: string;
 }
-const { title, description="Brett Ormsby; a student, programmer, webdev.", imgPath="/favicon.svg" } = Astro.props;
+const {
+  title,
+  description = "Brett Ormsby; a student, programmer, webdev.",
+  imgPath = "/Portfolio/favicon.svg"
+} = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -14,19 +18,19 @@ const { title, description="Brett Ormsby; a student, programmer, webdev.", imgPa
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/Portfolio/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
 
-    <link rel="apple-touch-icon" sizes="180x180" href={imgPath}>
-    <meta name='og:image' content={imgPath}>
+    <link rel="apple-touch-icon" sizes="180x180" href={imgPath} />
+    <meta name="og:image" content={imgPath} />
 
-    <meta name='og:title' content={title}>
-    <meta name='og:site_name' content="Brett Ormsby">
-    <meta name='og:description' content={description}>
+    <meta name="og:title" content={title} />
+    <meta name="og:site_name" content="Brett Ormsby" />
+    <meta name="og:description" content={description} />
 
     <title>{title}</title>
   </head>
   <body>
-    <slot>
+    <slot />
   </body>
 </html>

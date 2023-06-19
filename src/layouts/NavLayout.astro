@@ -4,19 +4,19 @@ import NavBar from "../components/NavBar.astro";
 import FooterNav from "../components/FooterNav.astro";
 export interface Props {
   title: string;
-  description?: string,
-  imgPath?: string
+  description?: string;
+  imgPath?: string;
 }
 const { title, imgPath, description } = Astro.props;
 ---
 
 <BaseLayout title={title} imgPath={imgPath} description={description}>
   <header><NavBar /></header>
-    <main class="container">
-      <slot />
-    </main>
-    <footer><FooterNav /></footer>
-  </BaseLayout>
+  <main class="container">
+    <slot />
+  </main>
+  <footer><FooterNav /></footer>
+</BaseLayout>
 
 <style is:global>
   header,

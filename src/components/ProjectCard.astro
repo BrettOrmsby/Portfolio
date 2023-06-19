@@ -9,7 +9,10 @@ const { project } = Astro.props;
 ---
 
 <article class="card">
-  <img src={"/projects/" + project.image.path} alt={project.image.alt} />
+  <img
+    src={"/Portfolio/projects/" + project.image.path}
+    alt={project.image.alt}
+  />
   <div class="content">
     <h3>{project.name}</h3>
     <div class="tag-group">

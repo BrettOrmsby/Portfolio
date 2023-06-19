@@ -6,6 +6,6 @@ export async function get() {
     description: "My articles about the projects I work on.",
     site: "https://brettormsby.github.io/portfolio/",
     items: await pagesGlobToRssItems(import.meta.glob("./**/*.md")),
-    customData: `<language>en-ca</language>`,
+    customData: `<language>en-ca</language>`
   });
 }
