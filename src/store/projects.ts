@@ -5,7 +5,7 @@ export default [
     name: "Blobbed Editor",
     image: { path: "blobbed-editor.jpg", alt: "Example output image" },
     link: "https://blobbededitor.vercel.app/",
-    tags: ["design", "vue", "javascript", "highlight.js", "html2canvas"],
+    tags: ["design", "vue", "javascript", "highlight.js", "html2canvas", "picocss"],
     description: "Create blobbed, syntax-highlighted images of your code.",
     date: "2022-8-11"
   },
@@ -36,8 +36,30 @@ export default [
       alt: "Example typestack fizzbuzz program"
     },
     link: "https://brettormsby.github.io/typestack/",
-    tags: ["typeScript", "programming language", "vscode", "vue"],
+    tags: ["typeScript", "programming language", "vscode", "vue", "picocss"],
     description: "A functional, stack-based, type-safe programing language",
     date: "2023-1-26"
+  },
+  {
+    name: "Scryfall Clipboard",
+    image: {
+      path: "scryfall-clipboard.png",
+      alt: "Example usage"
+    },
+    link: "https://addons.mozilla.org/en-CA/firefox/addon/scryfall-search-clipboard/",
+    tags: ["javascript", "extension"],
+    description: "Add an EDHREC-like clipboard for copying card names on Scryfall",
+    date: "2023-6-19"
+  },
+  {
+    name: "Portfolio",
+    image: {
+      path: "portfolio.png",
+      alt: "Home screen"
+    },
+    link: "https://brettormsby.github.io/Portfolio/",
+    tags: ["typescript", "astro", "picocss"],
+    description: "Add an EDHREC-like clipboard for copying card names on Scryfall",
+    date: "2023-6-19"
   }
 ] as Project[];
