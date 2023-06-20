@@ -1,9 +1,9 @@
 ---
 import type { Post } from "../utils/types";
-import Tag from "../components/Tag.astro";
+import Tag from "@components/Tag.astro";
+import TOC from "@components/TOC.astro";
 import NavLayout from "./NavLayout.astro";
 import type { MDXLayoutProps } from "astro";
-import TOC from "../components/TOC.astro";
 export type Props = MDXLayoutProps<Post>;
 const { frontmatter, headings } = Astro.props;
 

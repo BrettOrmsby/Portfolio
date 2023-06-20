@@ -1,10 +1,10 @@
 ---
-import NavLayout from "../layouts/NavLayout.astro";
-import Tag from "../components/Tag.astro";
-import ProjectCard from "../components/ProjectCard.astro";
+import NavLayout from "@layouts/NavLayout.astro";
+import Tag from "@components/Tag.astro";
+import ProjectCard from "@components/ProjectCard.astro";
+import PostCard from "@components/PostCard.astro";
 import projects from "../store/projects";
 import type { Post, Project } from "../utils/types";
-import PostCard from "../components/PostCard.astro";
 const postes = await Astro.glob<Post>("./posts/*.mdx");
 
 export const skills = [

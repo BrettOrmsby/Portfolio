@@ -1,6 +1,6 @@
 ---
-import PostCard from "../../components/PostCard.astro";
-import NavLayout from "../../layouts/NavLayout.astro";
+import PostCard from "@components/PostCard.astro";
+import NavLayout from "@layouts/NavLayout.astro";
 import type { Post } from "../../utils/types";
 const allPosts = await Astro.glob<Post>("./*.mdx");
 ---
