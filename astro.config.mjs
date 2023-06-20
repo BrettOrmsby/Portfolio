@@ -1,11 +1,13 @@
 import { defineConfig } from 'astro/config';
-import vue from "@astrojs/vue";
-
 import mdx from "@astrojs/mdx";
+import {remarkReadingTime} from "./remark-read-time.mjs"
 
 // https://astro.build/config
 export default defineConfig({
   site: 'https://brettormsby.github.io',
   base: '/Portfolio',
-  integrations: [vue(), mdx()],
+  integrations: [mdx()],
+  markdown: {
+    remarkPlugins: [remarkReadingTime],
+  }
 });
