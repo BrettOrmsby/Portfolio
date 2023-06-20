@@ -41,6 +41,9 @@
   --pico-primary-inverse: #fff;
 }
 
+html {
+  scroll-behavior: smooth;
+}
 
 .primary {
     color: var(--pico-primary);
