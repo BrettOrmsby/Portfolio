@@ -10,7 +10,15 @@ const allPosts = await Astro.glob<Post>("./*.mdx");
     <span class="primary">For</span> Post <span class="primary">Of</span> Posts
   </h1>
   <div class="post-grid">
-    {allPosts.map((post) => <PostCard post={post} />)}
+    {
+      allPosts
+        .sort(
+          (a, b) =>
+            new Date(b.frontmatter.pubDate).getTime() -
+            new Date(a.frontmatter.pubDate).getTime()
+        )
+        .map((post) => <PostCard post={post} />)
+    }
   </div>
 </NavLayout>
 

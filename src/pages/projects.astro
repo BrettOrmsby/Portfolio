@@ -9,7 +9,11 @@ import projects from "../store/projects";
     <span class="primary">For</span> Project <span class="primary">Of</span> Projects
   </h1>
   <div class="project-grid">
-    {projects.map((project) => <ProjectCard project={project} />)}
+    {
+      projects
+        .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+        .map((project) => <ProjectCard project={project} />)
+    }
   </div>
 </NavLayout>
 
