@@ -5,7 +5,7 @@ export async function get() {
     title: "Brett Ormsby | Blog",
     description: "My articles about the projects I work on.",
     site: "https://brettormsby.github.io/portfolio/",
-    items: await pagesGlobToRssItems(import.meta.glob("./**/*.md")),
+    items: await pagesGlobToRssItems(import.meta.glob("./*.mdx")),
     customData: `<language>en-ca</language>`
   });
 }
