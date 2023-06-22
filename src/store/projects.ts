@@ -67,8 +67,7 @@ export default [
     },
     link: "https://brettormsby.github.io/Portfolio/",
     tags: ["typescript", "astro", "picocss"],
-    description:
-      "Add an EDHREC-like clipboard for copying card names on Scryfall",
+    description: "Brett Ormsby; a student, programmer, webdev.",
     date: "2023-6-19"
   }
 ] as Project[];
