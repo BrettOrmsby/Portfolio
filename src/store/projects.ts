@@ -43,7 +43,7 @@ export default [
       alt: "Example typestack fizzbuzz program"
     },
     link: "https://brettormsby.github.io/typestack/",
-    tags: ["typeScript", "programming language", "vscode", "vue", "picocss"],
+    tags: ["typescript", "programming language", "vscode", "vue", "picocss"],
     description: "A functional, stack-based, type-safe programing language",
     date: "2023-1-26"
   },
@@ -69,5 +69,17 @@ export default [
     tags: ["typescript", "astro", "picocss"],
     description: "Brett Ormsby; a student, programmer, webdev.",
     date: "2023-6-19"
+  },
+  {
+    name: "Fris",
+    image: {
+      path: "fris.png",
+      alt: "Fris Example"
+    },
+    link: "https://github.com/BrettOrmsby/fris",
+    tags: ["typescript", "command-line"],
+    description:
+      "A command line tool to find and replace text within syntax scopes.",
+    date: "2023-7-29"
   }
 ] as Project[];
