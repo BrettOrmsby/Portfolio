@@ -81,5 +81,17 @@ export default [
     description:
       "A command line tool to find and replace text within syntax scopes.",
     date: "2023-7-29"
+  },
+  {
+    name: "Hyper Tagger",
+    image: {
+      path: "hyper-tagger.jpeg",
+      alt: "Hyper Tagger Example"
+    },
+    link: "https://brettormsby.github.io/hyper-tagger/",
+    tags: ["typescript", "primevue", "vue"],
+    description:
+      "Need to tag your Moxfield deck? Want to save time? Don't have a computer with you? Try this!",
+    date: "2023-8-14"
   }
 ] as Project[];
