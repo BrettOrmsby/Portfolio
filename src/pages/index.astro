@@ -51,7 +51,7 @@ const latestPost = postes.reduce(
     <div class="primary">]</div>
   </article>
 
-  <div class="side-by-side">
+  <div class="card-group">
     <div>
       <h2>
         Self<wbr />.<span class="primary">getLatestProject</span><wbr />()
@@ -72,13 +72,6 @@ const latestPost = postes.reduce(
   }
   article {
     --pico-block-spacing-vertical: var(--pico-block-spacing-horizontal);
-  }
-  .side-by-side {
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    column-gap: var(--pico-block-spacing-vertical);
-    flex-wrap: wrap;
   }
   .tag-group.start {
     justify-content: flex-start;

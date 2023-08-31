@@ -11,11 +11,10 @@
     "lint": "prettier --write  \"**/*.{js,jsx,ts,tsx,md,mdx,astro}\" && eslint --fix \"src/**/*.{js,ts,jsx,tsx,astro}\""
   },
   "dependencies": {
-    "@astrojs/mdx": "^0.19.7",
-    "@astrojs/rss": "^2.4.3",
+    "@astrojs/mdx": "^1.0.0",
+    "@astrojs/rss": "^2.4.4",
     "@picocss/pico": "^2.0.0-alpha1",
-    "astro": "^2.6.4",
-    "mdast-util-to-string": "^3.2.0",
+    "astro": "^3.0.3",
     "reading-time": "^1.5.0"
   },
   "devDependencies": {
@@ -25,6 +24,7 @@
     "eslint-plugin-jsx-a11y": "^6.7.1",
     "prettier": "^2.8.8",
     "prettier-config-standard": "^5.0.0",
-    "prettier-plugin-astro": "^0.10.0"
+    "prettier-plugin-astro": "^0.10.0",
+    "typescript": "^5.2.2"
   }
 }

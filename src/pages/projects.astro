@@ -8,7 +8,7 @@ import projects from "../store/projects";
   <h1>
     <span class="primary">For</span> Project <span class="primary">Of</span> Projects
   </h1>
-  <div class="project-grid">
+  <div class="card-group">
     {
       projects
         .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
@@ -20,12 +20,5 @@ import projects from "../store/projects";
 <style>
   h1 {
     text-align: center;
-  }
-  .project-grid {
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    column-gap: var(--pico-block-spacing-vertical);
-    flex-wrap: wrap;
   }
 </style>

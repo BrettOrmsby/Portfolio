@@ -9,7 +9,7 @@ const allPosts = await Astro.glob<Post>("./*.mdx");
   <h1>
     <span class="primary">For</span> Post <span class="primary">Of</span> Posts
   </h1>
-  <div class="post-grid">
+  <div class="card-group">
     {
       allPosts
         .sort(
@@ -25,12 +25,5 @@ const allPosts = await Astro.glob<Post>("./*.mdx");
 <style>
   h1 {
     text-align: center;
-  }
-  .post-grid {
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    column-gap: var(--pico-block-spacing-vertical);
-    flex-wrap: wrap;
   }
 </style>
