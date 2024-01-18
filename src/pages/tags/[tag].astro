@@ -1,4 +1,5 @@
 ---
+import { getCollection, type CollectionEntry } from "astro:content";
 import NavLayout from "@layouts/NavLayout.astro";
 import PostCard from "@components/PostCard.astro";
 import ProjectCard from "@components/ProjectCard.astro";
@@ -9,15 +10,15 @@ import type { MDXInstance } from "astro";
 
 export interface Props {
   projects: Project[];
-  posts: MDXInstance<Post>[];
+  posts: CollectionEntry<"posts">[];
 }
 
 export async function getStaticPaths() {
-  const allPosts = await Astro.glob("../posts/*.mdx");
+  const allPosts = await getCollection("posts");
 
   const tags = new Set(skills);
   for (const post of allPosts) {
-    for (const tag of post.frontmatter.tags) {
+    for (const tag of post.data.tags) {
       tags.add(tag);
     }
   }
@@ -29,7 +30,7 @@ export async function getStaticPaths() {
 
   return [...tags].map((tag) => {
     const filteredPosts = allPosts.filter((post) =>
-      post.frontmatter.tags.includes(tag)
+      post.data.tags.includes(tag)
     );
     const filteredProjects = allProjects.filter((project) =>
       project.tags.includes(tag as string)

@@ -1,11 +1,15 @@
 ---
-import type { Post } from "../utils/types";
+import type { CollectionEntry } from "astro:content";
 import Tag from "@components/Tag.astro";
 import TOC from "@components/TOC.astro";
 import NavLayout from "./NavLayout.astro";
-import type { MDXLayoutProps } from "astro";
-export type Props = MDXLayoutProps<Post>;
-const { frontmatter, headings } = Astro.props;
+import type { MarkdownHeading } from "astro";
+export type Props = {
+  post: CollectionEntry<"posts">;
+  headings: MarkdownHeading[];
+  remark: Record<string, any>;
+};
+const { post, headings, remark } = Astro.props;
 
 function formatDate(date: Date) {
   const months = [
@@ -31,22 +35,22 @@ function formatDate(date: Date) {
 ---
 
 <NavLayout
-  title={frontmatter.title}
-  description={frontmatter.description}
-  imgPath={"/Portfolio/posts/" + frontmatter.image.url}>
+  title={post.data.title}
+  description={post.data.description}
+  imgPath={"/Portfolio/posts/" + post.data.image.url}>
   <hgroup>
-    <h1>{frontmatter.title}</h1>
+    <h1>{post.data.title}</h1>
     <p>
-      <time datetime={frontmatter.pubDate.split("T")[0]}
-        >{formatDate(new Date(frontmatter.pubDate))}</time
-      > • {frontmatter.readTime}min read
+      <time datetime={post.data.pubDate.toString().toString().slice(0, 10)}
+        >{formatDate(new Date(post.data.pubDate))}</time
+      > • {remark.readTime}min read
     </p>
     <div class="tag-group markdown-tags">
-      {frontmatter.tags.map((tag) => <Tag name={tag} />)}
+      {post.data.tags.map((tag) => <Tag name={tag} />)}
     </div>
     <img
-      src={"/Portfolio/posts/" + frontmatter.image.url}
-      alt={frontmatter.image.alt}
+      src={"/Portfolio/posts/" + post.data.image.url}
+      alt={post.data.image.alt}
     />
   </hgroup>
   <TOC headings={headings} />

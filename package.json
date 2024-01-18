@@ -11,10 +11,10 @@
     "lint": "prettier --write  \"**/*.{js,jsx,ts,tsx,md,mdx,astro}\" && eslint --fix \"src/**/*.{js,ts,jsx,tsx,astro}\""
   },
   "dependencies": {
-    "@astrojs/mdx": "^1.0.0",
-    "@astrojs/rss": "^2.4.4",
+    "@astrojs/mdx": "^2.0.4",
+    "@astrojs/rss": "^4.0.2",
     "@picocss/pico": "^2.0.0-alpha1",
-    "astro": "^3.0.3",
+    "astro": "^4.1.3",
     "reading-time": "^1.5.0"
   },
   "devDependencies": {

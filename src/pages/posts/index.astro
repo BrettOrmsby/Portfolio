@@ -1,8 +1,8 @@
 ---
+import { getCollection } from "astro:content";
 import PostCard from "@components/PostCard.astro";
 import NavLayout from "@layouts/NavLayout.astro";
-import type { Post } from "../../utils/types";
-const allPosts = await Astro.glob<Post>("./*.mdx");
+const allPosts = await getCollection("posts");
 ---
 
 <NavLayout title="Posts">
@@ -14,8 +14,8 @@ const allPosts = await Astro.glob<Post>("./*.mdx");
       allPosts
         .sort(
           (a, b) =>
-            new Date(b.frontmatter.pubDate).getTime() -
-            new Date(a.frontmatter.pubDate).getTime()
+            new Date(b.data.pubDate).getTime() -
+            new Date(a.data.pubDate).getTime()
         )
         .map((post) => <PostCard post={post} />)
     }
