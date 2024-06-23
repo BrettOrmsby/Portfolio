@@ -93,5 +93,17 @@ export default [
     description:
       "Need to tag your Moxfield deck? Want to save time? Don't have a computer with you? Try this!",
     date: "2023-8-14"
+  },
+  {
+    name: "Augur",
+    image: {
+      path: "augur.png",
+      alt: "Augur search page example"
+    },
+    link: "https://augur-mtg.vercel.app/",
+    tags: ["typescript", "primevue", "vue"],
+    description:
+      "A Brewers MTG Search Engine.",
+    date: "2024-6-23"
   }
 ] as Project[];
