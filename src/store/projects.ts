@@ -102,8 +102,18 @@ export default [
     },
     link: "https://augur-mtg.vercel.app/",
     tags: ["typescript", "primevue", "vue"],
-    description:
-      "A Brewers MTG Search Engine.",
+    description: "A Brewers MTG Search Engine.",
     date: "2024-6-23"
+  },
+  {
+    name: "Sprout",
+    image: {
+      path: "sprout.png",
+      alt: "The Heal MidRose deck build with Sprout."
+    },
+    link: "https://sprout-deckbuider.vercel.app/",
+    tags: ["typescript", "primevue", "vue", "auth", "supabase"],
+    description: "A deck building website for Plants vs. Zombies Heros.",
+    date: "2024-7-29"
   }
 ] as Project[];
