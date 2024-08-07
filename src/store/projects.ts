@@ -115,5 +115,16 @@ export default [
     tags: ["typescript", "primevue", "vue", "auth", "supabase"],
     description: "A deck building website for Plants vs. Zombies Heros.",
     date: "2024-7-29"
+  },
+  {
+    name: "Turbo Tagger",
+    image: {
+      path: "turbo-tagger.png",
+      alt: "An example of tagging a Blue Farm deck."
+    },
+    link: "https://brettormsby.github.io/turbo-tagger/",
+    tags: ["typescript", "primevue", "vue"],
+    description: "A faster, computer-based version of Hyper Tagger.",
+    date: "2024-8-06"
   }
 ] as Project[];
