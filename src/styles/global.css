@@ -89,6 +89,10 @@ html {
   padding: calc(var(--pico-block-spacing-vertical) * 0.66) var(--pico-block-spacing-horizontal);
 }
 
+.markdown {
+  max-width: 70ch;
+}
+
 .markdown img {
   width:100%;
   display: block;
@@ -99,6 +103,8 @@ html {
   margin-bottom: 0;
 }
 
-.monospace, h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6 {
   font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
+  line-height: 1.2;
+  text-wrap: balance
 }
