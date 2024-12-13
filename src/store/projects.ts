@@ -126,5 +126,17 @@ export default [
     tags: ["typescript", "primevue", "vue"],
     description: "A faster, computer-based version of Hyper Tagger.",
     date: "2024-8-06"
+  },
+  {
+    name: "Area Wars",
+    image: {
+      path: "area-wars.png",
+      alt: "An example page where red is winning 85 to 26."
+    },
+    link: "https://brettormsby.github.io/area-wars/",
+    tags: ["typescript", "vue", "game"],
+    description:
+      "A strategic, two-player, turn-based game of tile control and dominance.",
+    date: "2024-12-13"
   }
 ] as Project[];
