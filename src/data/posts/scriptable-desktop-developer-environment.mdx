@@ -54,11 +54,12 @@ Which will produce something like this:
 ### Adding Autocomplete
 
 Next, we'll make a `jsconfig.json` file. The `lib` property defines what version of JavaScript is being used. The `moduleDetection` property ensures that no files are treated as global, so scripts should not affect each other.
+
 ```json
 {
   "compilerOptions": {
     "lib": ["ES2022"],
-    "moduleDetection": "force",
+    "moduleDetection": "force"
   }
 }
 ```
@@ -86,7 +87,7 @@ scriptable-environment/
 ├── node_modules/
 │   └── ...
 ├── src/
-│   └── ... 
+│   └── ...
 ├── jsconfig.json
 ├── package-lock.json
 └── package.json
@@ -135,6 +136,7 @@ You can name the script shortcuts however you like or update them to your needs.
 ### Limitations
 
 If you have the Mac Scriptable app and this developer environment setup, whenever you change your scripts, before running the Scriptable script to see the changes, you will have to exit the script text editor and enter it again. Otherwise, the script would run without the updates. Additionally, if you are using the `runScript.js` method to open Scriptable and run a script, it only runs on the main screen, so you cannot see the console outputs.
+
 > Interestingly, I have found that if you edit a script used in another via `importModule`, you can stay in the other script's text editor view. Then, whenever it is run, the updated code will be imported.
 
 ## TypeScript Work Environment
@@ -182,7 +184,7 @@ npm install --save-dev typescript
 npm install --save-dev @types/scriptable-ios
 ```
 
-Next, we will create a `tsconfig.json` file. We set `module` and `moduleResolution` to `Node16`, which is not too important considering we can't use normal imports in Scriptable. However, the purpose of this is to allow top-level awaits. The `moduleDetection` property ensures that no files are treated as global, so scripts should not affect each other. The `target` is a more recent version of JavaScript, which Scriptable supports. We set `sourceMap` to `false` because we only want the singular JavaScript files compiled. We have yet to set up our `roodDir` or `outDir`, but those tell TypeScript what code we are editing and where to output our JavaScript files. Finally, the `types` and `lib` properties work together to ensure the Scriptable types, such as `Result` and `Image`, take priority over the native types. 
+Next, we will create a `tsconfig.json` file. We set `module` and `moduleResolution` to `Node16`, which is not too important considering we can't use normal imports in Scriptable. However, the purpose of this is to allow top-level awaits. The `moduleDetection` property ensures that no files are treated as global, so scripts should not affect each other. The `target` is a more recent version of JavaScript, which Scriptable supports. We set `sourceMap` to `false` because we only want the singular JavaScript files compiled. We have yet to set up our `roodDir` or `outDir`, but those tell TypeScript what code we are editing and where to output our JavaScript files. Finally, the `types` and `lib` properties work together to ensure the Scriptable types, such as `Result` and `Image`, take priority over the native types.
 
 ```json
 {
@@ -224,6 +226,7 @@ Now, we need to create a symlink to the Scriptable folder so that TypeScript can
 ```bash
 ln -s ~/Library/Mobile\ Documents/iCloud~dk~simonbs~Scriptable/Documents scriptable
 ```
+
 Now, you can make a test script in TypeScript under the `src` directory.
 
 ### Compiling TypeScript
@@ -363,4 +366,3 @@ The limitations are mostly the same as in the JavaScript environment. If you hav
 ## Conclusion
 
 Now you can use a desktop environment to create Scriptable Scripts in JavaScript or TypeScript and still run them on your computer. I hope this will help in your Scriptable endeavours!
-
