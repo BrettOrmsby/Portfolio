@@ -138,5 +138,16 @@ export default [
     description:
       "A strategic, two-player, turn-based game of tile control and dominance.",
     date: "2024-12-13"
+  },
+  {
+    name: "Shape Fall",
+    image: {
+      path: "shape-fall.png",
+      alt: "An example level with red, blue, and green shapes."
+    },
+    link: "https://brettormsby.github.io/shape-fall/",
+    tags: ["typescript", "matter-js", "game", "vite"],
+    description: "A simple canvas-based physics puzzle game.",
+    date: "2025-7-4"
   }
 ] as Project[];
