@@ -149,5 +149,16 @@ export default [
     tags: ["typescript", "matter-js", "game", "vite"],
     description: "A simple canvas-based physics puzzle game.",
     date: "2025-7-4"
+  },
+  {
+    name: "SVGEO",
+    image: {
+      path: "svgeo.png",
+      alt: "Game modes including Countries, Canada Provinces, US States, and more."
+    },
+    link: "https://svgeo.vercel.app/",
+    tags: ["typescript", "react", "game"],
+    description: "Can you name the location from its shape?",
+    date: "2026-3-8"
   }
 ] as Project[];

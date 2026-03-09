@@ -48,7 +48,7 @@ const { posts, projects } = Astro.props;
 <NavLayout title={tag || ""}>
   <h1>Tag <span class="primary">=</span> `{tag}`</h1>
   <h2>Posts</h2>
-  <div class="card-grid">
+  <div class="card-group">
     {
       posts.length > 0 ? (
         posts.map((post) => <PostCard post={post} />)
@@ -58,7 +58,7 @@ const { posts, projects } = Astro.props;
     }
   </div>
   <h2>Projects</h2>
-  <div class="card-grid">
+  <div class="card-group">
     {
       projects.length > 0 ? (
         projects.map((project) => <ProjectCard project={project} />)
@@ -74,12 +74,7 @@ const { posts, projects } = Astro.props;
   h2 {
     text-align: center;
   }
-  .card-grid {
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    column-gap: var(--pico-block-spacing-vertical);
-    flex-wrap: wrap;
+  .card-group {
     margin-bottom: var(--pico-block-spacing-vertical);
   }
 </style>
