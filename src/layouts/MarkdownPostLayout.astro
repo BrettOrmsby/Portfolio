@@ -24,7 +24,7 @@ function formatDate(date: Date) {
     "September",
     "October",
     "November",
-    "December"
+    "December",
   ];
   const day = date.getDate();
   const month = months[date.getMonth()];
@@ -37,21 +37,22 @@ function formatDate(date: Date) {
 <NavLayout
   title={post.data.title}
   description={post.data.description}
-  imgPath={"/Portfolio/posts/" + post.data.image.url}>
+  imgPath={"/Portfolio/posts/" + post.data.image.url}
+>
   <hgroup>
     <h1>{post.data.title}</h1>
     <p>
-      <time datetime={post.data.pubDate.toString().toString().slice(0, 10)}
-        >{formatDate(new Date(post.data.pubDate))}</time
-      > • {remark.readTime}min read
+      <time datetime={post.data.pubDate.toString().toString().slice(0, 10)}>
+        {formatDate(new Date(post.data.pubDate))}
+      </time>{" "}
+      • {remark.minutesRead}
     </p>
     <div class="tag-group markdown-tags">
-      {post.data.tags.map((tag) => <Tag name={tag} />)}
+      {post.data.tags.map((tag) => (
+        <Tag name={tag} />
+      ))}
     </div>
-    <img
-      src={"/Portfolio/posts/" + post.data.image.url}
-      alt={post.data.image.alt}
-    />
+    <img src={"/Portfolio/posts/" + post.data.image.url} alt={post.data.image.alt} />
   </hgroup>
   <TOC headings={headings} />
   <main class="container markdown">

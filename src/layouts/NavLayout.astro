@@ -11,11 +11,15 @@ const { title, imgPath, description } = Astro.props;
 ---
 
 <BaseLayout title={title} imgPath={imgPath} description={description}>
-  <header><NavBar /></header>
+  <header>
+    <NavBar />
+  </header>
   <main class="container">
     <slot />
   </main>
-  <footer><FooterNav /></footer>
+  <footer>
+    <FooterNav />
+  </footer>
 </BaseLayout>
 
 <style>

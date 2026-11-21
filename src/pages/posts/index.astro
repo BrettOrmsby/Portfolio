@@ -10,15 +10,11 @@ const allPosts = await getCollection("posts");
     <span class="primary">For</span> Post <span class="primary">Of</span> Posts
   </h1>
   <div class="card-group">
-    {
-      allPosts
-        .sort(
-          (a, b) =>
-            new Date(b.data.pubDate).getTime() -
-            new Date(a.data.pubDate).getTime()
-        )
-        .map((post) => <PostCard post={post} />)
-    }
+    {allPosts
+      .sort((a, b) => new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime())
+      .map((post) => (
+        <PostCard post={post} />
+      ))}
   </div>
 </NavLayout>
 

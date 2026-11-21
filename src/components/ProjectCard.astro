@@ -9,16 +9,17 @@ const { project } = Astro.props;
 ---
 
 <article class="card">
-  <img
-    src={"/Portfolio/projects/" + project.image.path}
-    alt={project.image.alt}
-  />
+  <img src={"/Portfolio/projects/" + project.image.path} alt={project.image.alt} />
   <div class="content">
     <h3>{project.name}</h3>
     <div class="tag-group">
-      {project.tags.sort().map((tag) => <Tag name={tag} />)}
+      {project.tags.sort().map((tag) => (
+        <Tag name={tag} />
+      ))}
     </div>
     <p>{project.description}</p>
-    <a role="button" href={project.link}>Visit</a>
+    <a role="button" href={project.link}>
+      Visit
+    </a>
   </div>
 </article>

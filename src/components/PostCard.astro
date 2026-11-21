@@ -9,16 +9,17 @@ const { post } = Astro.props;
 ---
 
 <article class="card">
-  <img
-    src={"/Portfolio/posts/" + post.data.image.url}
-    alt={post.data.image.alt}
-  />
+  <img src={"/Portfolio/posts/" + post.data.image.url} alt={post.data.image.alt} />
   <div class="content">
     <h3>{post.data.title}</h3>
     <div class="tag-group">
-      {post.data.tags.sort().map((tag) => <Tag name={tag} />)}
+      {post.data.tags.sort().map((tag) => (
+        <Tag name={tag} />
+      ))}
     </div>
     <p>{post.data.description}</p>
-    <a role="button" href={"/Portfolio/posts/" + post.id}>Read</a>
+    <a role="button" href={"/Portfolio/posts/" + post.id}>
+      Read
+    </a>
   </div>
 </article>

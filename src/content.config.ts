@@ -1,4 +1,5 @@
-import { z, defineCollection } from "astro:content";
+import { defineCollection } from "astro:content";
+import { z } from "astro/zod";
 import { glob } from "astro/loaders";
 
 const posts = defineCollection({
@@ -9,13 +10,13 @@ const posts = defineCollection({
     description: z.string(),
     image: z.object({
       url: z.string(),
-      alt: z.string()
+      alt: z.string(),
     }),
-    tags: z.array(z.string())
-  })
+    tags: z.array(z.string()),
+  }),
 });
 
 // Export a single `collections` object to register your collection(s)
 export const collections = {
-  posts
+  posts,
 };

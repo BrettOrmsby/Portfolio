@@ -28,15 +28,11 @@ export async function getStaticPaths() {
   }
 
   return [...tags].map((tag) => {
-    const filteredPosts = allPosts.filter((post) =>
-      post.data.tags.includes(tag)
-    );
-    const filteredProjects = allProjects.filter((project) =>
-      project.tags.includes(tag as string)
-    );
+    const filteredPosts = allPosts.filter((post) => post.data.tags.includes(tag));
+    const filteredProjects = allProjects.filter((project) => project.tags.includes(tag as string));
     return {
       params: { tag },
-      props: { posts: filteredPosts, projects: filteredProjects }
+      props: { posts: filteredPosts, projects: filteredProjects },
     };
   });
 }
@@ -46,26 +42,20 @@ const { posts, projects } = Astro.props;
 ---
 
 <NavLayout title={tag || ""}>
-  <h1>Tag <span class="primary">=</span> `{tag}`</h1>
+  <h1>
+    Tag <span class="primary">=</span> `{tag}`
+  </h1>
   <h2>Posts</h2>
   <div class="card-group">
-    {
-      posts.length > 0 ? (
-        posts.map((post) => <PostCard post={post} />)
-      ) : (
-        <p>No posts found.</p>
-      )
-    }
+    {posts.length > 0 ? posts.map((post) => <PostCard post={post} />) : <p>No posts found.</p>}
   </div>
   <h2>Projects</h2>
   <div class="card-group">
-    {
-      projects.length > 0 ? (
-        projects.map((project) => <ProjectCard project={project} />)
-      ) : (
-        <p>No projects found.</p>
-      )
-    }
+    {projects.length > 0 ? (
+      projects.map((project) => <ProjectCard project={project} />)
+    ) : (
+      <p>No projects found.</p>
+    )}
   </div>
 </NavLayout>
 

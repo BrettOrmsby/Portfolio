@@ -2,7 +2,7 @@ export type Post = {
   title: string;
   pubDate: string;
   description: string;
-  readTime: number;
+  minutesRead: number;
   image: {
     url: string;
     alt: string;

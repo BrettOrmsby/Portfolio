@@ -18,37 +18,44 @@ export const skills = [
   "python",
   "supabase",
   "typescript",
-  "vue"
+  "vue",
 ];
 const latestProject = projects.reduce(
   (a, b) => (new Date(a.date) < new Date(b.date) ? b : a),
-  projects[0]
+  projects[0],
 );
 const latestPost = postes.reduce(
   (a, b) => (new Date(a.data.pubDate) < new Date(b.data.pubDate) ? b : a),
-  postes[0]
+  postes[0],
 );
 ---
 
 <NavLayout title="Brett Ormsby">
   <hgroup>
-    <h1>Hi, I am <span class="primary">Brett Ormsby</span></h1>
+    <h1>
+      Hi, I am <span class="primary">Brett Ormsby</span>
+    </h1>
     <em> A student and programming hobbyist</em>
   </hgroup>
-  <h2>Self.<span class="primary">about</span></h2>
+  <h2>
+    Self.<span class="primary">about</span>
+  </h2>
   <article>
-    <div class="primary">"""</div>
-    I am a current student and programming hobbyist from Ontario, Canada. I enjoy
-    solving problems and creating fun and useful websites. You also might find me
+    <div class="primary">"""</div>I am a current student and programming hobbyist from Ontario,
+    Canada. I enjoy solving problems and creating fun and useful websites. You also might find me
     reading my latest book or playing card and board games.
     <div class="primary">"""</div>
   </article>
-  <h2>Self.<span class="primary">skills</span></h2>
+  <h2>
+    Self.<span class="primary">skills</span>
+  </h2>
   <article>
     <div class="primary">[</div>
     <div class="tag-group start">
       <div style="width: var(--pico-spacing)"></div>
-      {skills.map((skill) => <Tag name={skill} />)}
+      {skills.map((skill) => (
+        <Tag name={skill} />
+      ))}
     </div>
     <div class="primary">]</div>
   </article>
@@ -56,12 +63,20 @@ const latestPost = postes.reduce(
   <div class="card-group">
     <div>
       <h2>
-        Self<wbr />.<span class="primary">getLatestProject</span><wbr />()
+        Self
+        <wbr />.<span class="primary">getLatestProject</span>
+        <wbr />
+        ()
       </h2>
       <ProjectCard project={latestProject} />
     </div>
     <div>
-      <h2>Self<wbr />.<span class="primary">getLatestPost</span><wbr />()</h2>
+      <h2>
+        Self
+        <wbr />.<span class="primary">getLatestPost</span>
+        <wbr />
+        ()
+      </h2>
       <PostCard post={latestPost} />
     </div>
   </div>

@@ -11,19 +11,15 @@ const { headings } = Astro.props;
     <h2>Table of Contents</h2>
     <aside>
       <ul>
-        {
-          headings
-            .filter((heading) => heading.depth < 4)
-            .map((heading) => (
-              <li>
-                <a
-                  href={"#" + heading.slug}
-                  class={heading.depth === 3 ? "nestled" : ""}>
-                  {heading.text}
-                </a>
-              </li>
-            ))
-        }
+        {headings
+          .filter((heading) => heading.depth < 4)
+          .map((heading) => (
+            <li>
+              <a href={"#" + heading.slug} class={heading.depth === 3 ? "nestled" : ""}>
+                {heading.text}
+              </a>
+            </li>
+          ))}
       </ul>
     </aside>
   </article>

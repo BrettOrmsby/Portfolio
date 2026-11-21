@@ -97,9 +97,7 @@ function parseXML(string) {
   parser.didEndElement = (name) => {};
   parser.foundCharacters = (text) => {};
   parser.parseErrorOccurred = () => {
-    console.warn(
-      "A parse error occurred, ensure the document is formatted properly."
-    );
+    console.warn("A parse error occurred, ensure the document is formatted properly.");
   };
 }
 ```
@@ -112,7 +110,7 @@ function parseXML(string) {
     isRoot: true,
     name: "root",
     attrs: {},
-    children: []
+    children: [],
   };
   // ...
 }
@@ -126,7 +124,7 @@ let main = {
   isRoot: true,
   name: "root",
   attrs: {},
-  children: []
+  children: [],
 };
 let target = main;
 let goBack = {};
@@ -147,7 +145,7 @@ parser.didStartElement = (name, attrs) => {
     attrs,
     innerText: "",
     children: [],
-    end: backTo
+    end: backTo,
   };
   target.children.push(newTarget);
   target = newTarget;
@@ -194,9 +192,7 @@ There is a small catch. The XML could be improperly formatted and cause an undet
 // ...
 parser.parse();
 if (!main.isRoot) {
-  console.warn(
-    "A parse error occurred, ensure the document is formatted properly."
-  );
+  console.warn("A parse error occurred, ensure the document is formatted properly.");
 }
 delete main.isRoot;
 // ...
@@ -417,7 +413,7 @@ function parseXML(string) {
     isRoot: true,
     name: "root",
     attrs: {},
-    children: []
+    children: [],
   };
   let target = main;
   let goBack = {};
@@ -432,7 +428,7 @@ function parseXML(string) {
       attrs,
       innerText: "",
       children: [],
-      end: backTo
+      end: backTo,
     };
     target.children.push(newTarget);
     target = newTarget;
@@ -445,22 +441,17 @@ function parseXML(string) {
   };
 
   parser.foundCharacters = (text) => {
-    target.innerText +=
-      target.innerText === "" ? text.trim() : " " + text.trim();
+    target.innerText += target.innerText === "" ? text.trim() : " " + text.trim();
   };
 
   parser.parseErrorOccurred = () => {
-    console.warn(
-      "A parse error occurred, ensure the document is formatted properly."
-    );
+    console.warn("A parse error occurred, ensure the document is formatted properly.");
   };
 
   parser.parse();
 
   if (!main.isRoot) {
-    console.warn(
-      "A parse error occurred, ensure the document is formatted properly."
-    );
+    console.warn("A parse error occurred, ensure the document is formatted properly.");
   }
   delete main.isRoot;
 
