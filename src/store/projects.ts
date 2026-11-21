@@ -160,5 +160,16 @@ export default [
     tags: ["typescript", "react", "game"],
     description: "Can you name the location from its shape?",
     date: "2026-3-8"
+  },
+  {
+    name: "Blox",
+    image: {
+      path: "blox.png",
+      alt: "Demo fizzbuzz program with the compiled output."
+    },
+    link: "https://github.com/BrettOrmsby/blox",
+    tags: ["c", "programming language"],
+    description: "A simplified Lox to BrainF*ck Compiler.",
+    date: "2026-11-21"
   }
 ] as Project[];
